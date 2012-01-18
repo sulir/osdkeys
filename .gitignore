@@ -1,0 +1,10 @@
+Debug/
+Release/
+obj/*.d
+obj/*.o
+*.exe
+*.suo
+*.sdf
+*.opensdf
+*.vcxproj.user
+*.vcxproj.filters
