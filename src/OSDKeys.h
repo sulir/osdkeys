@@ -5,6 +5,7 @@
 #include "PopupMenu.h"
 #include "TrayIcon.h"
 #include "LockKeys.h"
+#include "VolumeKeys.h"
 
 /**
  * OSDKeys application.
@@ -24,4 +25,5 @@ private:
 	TrayIcon* trayIcon;
 	PopupMenu* trayMenu;
 	LockKeys* lockKeys;
+	VolumeKeys* volumeKeys;
 };

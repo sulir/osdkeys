@@ -23,6 +23,7 @@ void OSDKeys::start() {
 	trayIcon->setPopupMenu(trayMenu);
 
 	lockKeys = new LockKeys(*mainWindow, *topLabel, *bottomLabel);
+	volumeKeys = new VolumeKeys(*mainWindow, *topLabel, *bottomLabel);
 }
 
 void OSDKeys::stop() {
