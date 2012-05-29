@@ -13,7 +13,7 @@
 
 class LockKeys : NonCopyable {
 public:
-	LockKeys(Window& window, Label& topLabel, Label& bottomLabel);
+	LockKeys(Window& window, Label& topLabel, Label& bottomLabel, Timer* hideTimer);
 	~LockKeys();
 	void registerEvents();
 private:

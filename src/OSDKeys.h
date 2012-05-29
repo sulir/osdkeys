@@ -24,6 +24,7 @@ private:
 	const Font* bottomLabelFont;
 	TrayIcon* trayIcon;
 	PopupMenu* trayMenu;
+	Timer* hideTimer;
 	LockKeys* lockKeys;
 	VolumeKeys* volumeKeys;
 };

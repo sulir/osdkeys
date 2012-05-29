@@ -4,11 +4,8 @@
 
 using namespace std;
 
-LockKeys::LockKeys(Window& window, Label& topLabel, Label& bottomLabel) {
-	hideTimer = new Timer(window, 2000U, [&] {
-		window.hide();
-	});
-
+LockKeys::LockKeys(Window& window, Label& topLabel, Label& bottomLabel, Timer* hideTimer)
+: hideTimer(hideTimer) {
 	capsLock = new HotKey(window, VK_CAPITAL, [&] {
 		updateLabels(window, topLabel, bottomLabel);
 	});

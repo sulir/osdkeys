@@ -116,7 +116,7 @@ bool MasterVolume::ImplementationVista::isMuted() {
 	
 	CoUninitialize();
 
-	return (muted == 1); // disable MSVC warning;
+	return (muted == 1);
 }
 
 IMMDevice* MasterVolume::ImplementationVista::getMMDevice() {

@@ -22,8 +22,12 @@ void OSDKeys::start() {
 	});
 	trayIcon->setPopupMenu(trayMenu);
 
-	lockKeys = new LockKeys(*mainWindow, *topLabel, *bottomLabel);
-	volumeKeys = new VolumeKeys(*mainWindow, *topLabel, *bottomLabel);
+	hideTimer = new Timer(*mainWindow, 2000U, [&] {
+		mainWindow->hide();
+	});
+
+	lockKeys = new LockKeys(*mainWindow, *topLabel, *bottomLabel, hideTimer);
+	volumeKeys = new VolumeKeys(*mainWindow, *topLabel, *bottomLabel, hideTimer);
 }
 
 void OSDKeys::stop() {

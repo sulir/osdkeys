@@ -5,11 +5,8 @@
 
 using namespace std;
 
-VolumeKeys::VolumeKeys(Window& window, Label& topLabel, Label& bottomLabel) : volume(new MasterVolume()) {
-	hideTimer = new Timer(window, 2000U, [&] {
-		window.hide();
-	});
-
+VolumeKeys::VolumeKeys(Window& window, Label& topLabel, Label& bottomLabel, Timer* hideTimer)
+: hideTimer(hideTimer), volume(new MasterVolume()) {
 	function<void()> onVolumeChange = [&] {
 		updateLabels(window, topLabel, bottomLabel);
 	};

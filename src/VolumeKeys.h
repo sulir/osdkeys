@@ -13,7 +13,7 @@
 
 class VolumeKeys : NonCopyable {
 public:
-	VolumeKeys(Window& window, Label& topLabel, Label& bottomLabel);
+	VolumeKeys(Window& window, Label& topLabel, Label& bottomLabel, Timer* hideTimer);
 	~VolumeKeys();
 private:
 	void updateLabels(Window& window, Label& volumeLabel, Label& muteLabel);
