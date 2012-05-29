@@ -10,7 +10,7 @@
 
 class TrayIcon : public MessageObserver {
 public:
-	TrayIcon(Window& window, std::wstring tooltip = L"");
+	TrayIcon(Window& window, std::wstring icon, std::wstring tooltip = L"");
 	~TrayIcon();
 	void setPopupMenu(PopupMenu* menu);
 	void onMessage(const Message& msg);

@@ -15,7 +15,7 @@ void OSDKeys::start() {
 	bottomLabelFont = new Font(L"Arial", 20, true);
 	bottomLabel->setFont(*bottomLabelFont);
 
-	trayIcon = new TrayIcon(*mainWindow, L"OSDKeys");
+	trayIcon = new TrayIcon(*mainWindow, L"IDI_MAIN", L"OSDKeys");
 	trayMenu = new PopupMenu(*mainWindow);
 	trayMenu->addItem(L"Exit", [] {
 		PostQuitMessage(0);

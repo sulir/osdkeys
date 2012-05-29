@@ -2,6 +2,7 @@ Debug/
 Release/
 obj/*.d
 obj/*.o
+res/*.o
 *.exe
 *.suo
 *.sdf

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-TrayIcon::TrayIcon(Window& window, wstring tooltip) : window(window), menu(NULL) {
+TrayIcon::TrayIcon(Window& window, wstring icon, wstring tooltip) : window(window), menu(NULL) {
 	iconID = SequentialFactory<UINT>::next();
 	messageID = SequentialFactory<UINT, WM_APP>::next();
 
@@ -15,7 +15,7 @@ TrayIcon::TrayIcon(Window& window, wstring tooltip) : window(window), menu(NULL)
 	nid.uID = iconID;
 	nid.uFlags = NIF_MESSAGE | NIF_ICON | NIF_TIP;
 	nid.uCallbackMessage = messageID;
-	nid.hIcon = LoadIcon(NULL, IDI_INFORMATION);
+	nid.hIcon = LoadIcon(GetModuleHandle(NULL), icon.c_str());
 
 	// MSVC issues a warning that wstring::copy() is deprecated.
 	// Using "Secure API" function wcscpy_s in MinGW would require redistributing msvcrtXX.dll.

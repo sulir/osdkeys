@@ -4,6 +4,9 @@ CXX = g++
 # paths
 SRCPATH = src
 OBJPATH = obj
+RESPATH = res
+RCFILE = osdkeys.rc
+RESOURCES = osdkeys.ico
 TARGET = OSDKeys.exe
 
 # flags
@@ -12,12 +15,13 @@ LDFLAGS = -mwindows -static-libgcc -static-libstdc++ -lwinmm -lole32
 
 SRCS = $(wildcard $(SRCPATH)/*.cpp)
 OBJS = $(patsubst $(SRCPATH)/%.cpp,$(OBJPATH)/%.o,$(SRCS))
+RES = $(patsubst %.rc,$(RESPATH)/%.o,$(RCFILE))
 
 .PHONY: all clean
 
 all: $(TARGET)
 
-$(TARGET): $(OBJS)
+$(TARGET): $(OBJS) $(RES)
 	$(CXX) -o $@ $^ $(LDFLAGS)
 	strip $(TARGET)
 
@@ -26,7 +30,11 @@ $(OBJPATH)/%.o: $(SRCPATH)/%.cpp
 
 -include $(wildcard $(OBJPATH)/*.d)
 
+$(RES): $(RESPATH)/$(RCFILE) $(addprefix $(RESPATH)/,$(RESOURCES))
+	windres $(RESPATH)/$(RCFILE) $(RES)
+
 clean:
 	rm -f $(TARGET)
 	rm -f $(OBJPATH)/*.o
 	rm -f $(OBJPATH)/*.d
+	rm -f $(RES)
