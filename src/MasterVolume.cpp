@@ -120,9 +120,12 @@ bool MasterVolume::ImplementationVista::isMuted() {
 }
 
 IMMDevice* MasterVolume::ImplementationVista::getMMDevice() {
+	CLSID clsidMMDeviceEnumerator = __uuidof(MMDeviceEnumerator);
+	IID iidIMMDeviceEnumerator = __uuidof(IMMDeviceEnumerator);
+	
 	IMMDeviceEnumerator* deviceEnum;
-	CoCreateInstance(__uuidof(MMDeviceEnumerator), NULL, CLSCTX_INPROC_SERVER,
-		__uuidof(IMMDeviceEnumerator), (void**)&deviceEnum);
+	CoCreateInstance(clsidMMDeviceEnumerator, NULL, CLSCTX_INPROC_SERVER,
+		iidIMMDeviceEnumerator, (void**)&deviceEnum);
 
 	IMMDevice* device;
 	deviceEnum->GetDefaultAudioEndpoint(eRender, eConsole, &device);
