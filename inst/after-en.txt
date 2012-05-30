@@ -1,0 +1,1 @@
+OSDKeys will start now and also on every Windows startup (until you uninstall the application). You can quit the application by right-clicking the tray icon and selecting the "Exit" option.

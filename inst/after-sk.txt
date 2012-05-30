@@ -1,0 +1,1 @@
+OSDKeys sa spustí teraz aj pri kadom štarte systému Windows (a kım aplikáciu neodinštalujete). Aplikáciu môete ukonèi pravım kliknutím na ikonu ved¾a hodín a vıberom poloky "Exit".

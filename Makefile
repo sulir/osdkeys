@@ -7,7 +7,7 @@ OBJPATH = obj
 RESPATH = res
 RCFILE = osdkeys.rc
 RESOURCES = osdkeys.ico
-TARGET = OSDKeys.exe
+TARGET = osdkeys.exe
 
 # flags
 CXXFLAGS = -O0 -Wall -DUNICODE -D_WIN32_WINNT=0x0600 -std=gnu++0x

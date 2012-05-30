@@ -22,6 +22,6 @@ Compilation
 The project is tested to compile with:
 
 * MS Visual C++ 2010 Express
-* GCC 4.7, both x86 and x64
+* MinGW (GCC 4.7+), both x86 and x64
 
-Currently, the GCC build does not function properly on Windows Vista / 7 because of a COM-related error. The MSVC build works fine.
+Only some MinGW builds work on Windows 7, e.g. [these](http://sourceforge.net/projects/mingwbuilds/files/windows-host/4.7.1/) are fine.

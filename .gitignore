@@ -3,6 +3,7 @@ Release/
 obj/*.d
 obj/*.o
 res/*.o
+inst/*.exe
 *.exe
 *.suo
 *.sdf
